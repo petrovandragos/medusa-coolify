@@ -62,6 +62,8 @@ module.exports = defineConfig({
             resolve: "@medusajs/medusa/file-local",
             id: "local",
             options: {
+              // The framework serves this directory at /static with no cache
+              // option. Cache-Control is installed in instrumentation.ts.
               upload_dir: "static",
               backend_url: `${process.env.BACKEND_URL}/static`,
             },
